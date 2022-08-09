@@ -107,9 +107,11 @@ def get_citations_structure_multiple(sources, cites_depth=1, cited_depth=1):
     return links, nodes
 
 
-def do_stats(nodes, print_res=True):
+def do_stats(nodes, print_res=True, expert_docs_file=True):
     nodes = set(nodes)
-
+    if expert_docs_file:
+        with open('./expert_docs.txt', 'r') as f:
+            expert_docs = f.read()
     precision = len(nodes.intersection(expert_docs)) / float(len(nodes))
     recall = len(nodes.intersection(expert_docs)) / float(len(expert_docs))
     f1 = 2 * (precision * recall) / (precision + recall)
