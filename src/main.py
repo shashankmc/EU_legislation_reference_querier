@@ -1,4 +1,5 @@
-from helper_functions import get_citations, get_citations_multiple, get_citations_structure, get_citations_structure_multiple
+from helper_functions import get_citations, get_citations_multiple,
+get_citations_structure, get_citations_structure_multiple, do_stats
 import networkx as nx
 from pyvis.network import Network
 
@@ -22,7 +23,6 @@ def get_started(source, source_type='single'):
     # obtain stats on the extracted nodes
     do_stats(nodes)
     return links, nodes
-    
 
 def get_indv_stats(source, range_limit):
     # Go through matrix of depths and calculate stats for each
